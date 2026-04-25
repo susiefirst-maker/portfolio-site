@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Di Wu &mdash; ML for Biologics Portfolio</title>
+    <meta
+      name="description"
+      content="Static portfolio skeleton for Di Wu's ML for biologics projects."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Static Portfolio Skeleton</p>
+        <h1>Di Wu</h1>
+        <p class="lede">
+          I run statistically rigorous benchmarks across the antibody
+          developability stack &mdash; descriptor ablations, discrete BO, guided
+          generation with independent oracles &mdash; and ship clickable
+          artifacts grounded in published methods.
+        </p>
+      </header>
+
+      <section class="projects-block" aria-labelledby="projects-heading">
+        <div class="section-heading">
+          <h2 id="projects-heading">Projects</h2>
+          <p id="load-status" class="section-meta">Loading README-backed metadata...</p>
+        </div>
+        <div id="projects" class="projects-list" aria-live="polite"></div>
+        <noscript>
+          <p class="notice">
+            This page reads <code>projects.json</code> in the browser, so JavaScript must
+            be enabled.
+          </p>
+        </noscript>
+      </section>
+    </main>
+
+    <script>
+      const projectsRoot = document.getElementById("projects");
+      const loadStatus = document.getElementById("load-status");
+
+      function createElement(tagName, className, text) {
+        const node = document.createElement(tagName);
+        if (className) {
+          node.className = className;
+        }
+        if (text !== undefined) {
+          node.textContent = text;
+        }
+        return node;
+      }
+
+      function renderProject(project) {
+        const card = createElement("article", "project-card");
+
+        const header = createElement("div", "project-header");
+        const titleBlock = createElement("div", "project-title-block");
+        titleBlock.appendChild(createElement("h3", "project-title", project.title));
+        titleBlock.appendChild(createElement("p", "project-tagline", project.tagline));
+        header.appendChild(titleBlock);
+
+        const badge = createElement("span", "status-badge status-" + project.status, project.status);
+        badge.setAttribute("aria-label", "Status: " + project.status);
+        header.appendChild(badge);
+        card.appendChild(header);
+
+        const tags = createElement("ul", "tag-list");
+        project.tags.forEach((tag) => {
+          const item = createElement("li", "tag-chip", tag);
+          tags.appendChild(item);
+        });
+        card.appendChild(tags);
+
+        const links = createElement("div", "project-links");
+        const githubLink = createElement("a", "project-link", "GitHub");
+        githubLink.href = project.github_url;
+        githubLink.target = "_blank";
+        githubLink.rel = "noreferrer";
+        links.appendChild(githubLink);
+
+        if (project.frontend_url) {
+          const frontendLink = createElement("a", "project-link", "Frontend");
+          frontendLink.href = project.frontend_url;
+          frontendLink.target = "_blank";
+          frontendLink.rel = "noreferrer";
+          links.appendChild(frontendLink);
+        }
+        card.appendChild(links);
+
+        const factsHeading = createElement("p", "facts-heading", "Key facts");
+        card.appendChild(factsHeading);
+
+        const facts = createElement("ul", "facts-list");
+        project.key_facts.forEach((fact) => {
+          const item = createElement("li", fact.startsWith("TODO:") ? "todo-fact" : "", fact);
+          facts.appendChild(item);
+        });
+        card.appendChild(facts);
+
+        return card;
+      }
+
+      async function loadProjects() {
+        try {
+          const response = await fetch("./projects.json", { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+
+          const projects = await response.json();
+          const fragment = document.createDocumentFragment();
+
+          projects.forEach((project) => {
+            fragment.appendChild(renderProject(project));
+          });
+
+          projectsRoot.replaceChildren(fragment);
+          loadStatus.textContent = projects.length + " projects sourced from local repo docs.";
+        } catch (error) {
+          const notice = createElement(
+            "p",
+            "notice",
+            "Could not load projects.json. Serve this directory with python3 -m http.server 8000 and open http://127.0.0.1:8000/."
+          );
+          projectsRoot.replaceChildren(notice);
+          loadStatus.textContent = "Load failed.";
+          console.error(error);
+        }
+      }
+
+      loadProjects();
+    </script>
+  </body>
+</html>

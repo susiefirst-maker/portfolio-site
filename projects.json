@@ -1,0 +1,169 @@
+[
+  {
+    "id": "protepilot",
+    "title": "ProtePilot \u2014 Developability Decision Orchestrator",
+    "tagline": "Routes a candidate sequence through specialized predictors \u2014 aggregation, stability, immunogenicity, manufacturability, process economics \u2014 and emits an integrated go/no-go verdict with per-dimension confidence scores.",
+    "github_url": "https://github.com/susiefirst-maker/protepilot",
+    "status": "shipped",
+    "tags": [
+      "developability",
+      "therapeutic protein",
+      "ESM-2",
+      "XGBoost",
+      "Streamlit"
+    ],
+    "key_facts": [
+      "Covers 10 molecule formats from canonical mAbs to bispecifics, nanobodies, ADCs, and engineered scaffolds.",
+      "138 quality gate checks are reported as all passing.",
+      "Benchmarks include 246 clinical-stage antibodies across 13 experimental assays.",
+      "PROPHET-Ab results report 8/13 significant correlations with 13/13 correct direction.",
+      "IEDB validation reports ROC AUC = 0.699 on 5,000 human MHC-II T-cell epitopes."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "ab-benchmark",
+    "title": "ab-benchmark",
+    "tagline": "This package treats TAP, DI, CamSol, and PROPHET-Ab as comparable baselines under a common evaluation harness \u2014 grouped-repeated CV clustered on V-gene family + CDR-H3 length + 50% CDR-H3 identity, with bootstrap 95% CIs on every metric.",
+    "github_url": "https://github.com/susiefirst-maker/ab-benchmark",
+    "status": "in-progress",
+    "tags": [
+      "antibody",
+      "benchmark",
+      "TAP",
+      "CamSol",
+      "bootstrap CI"
+    ],
+    "key_facts": [
+      "The README scope names 7 baseline families: TAP, Developability Index, CamSol-intrinsic, BioPhi/OASis, DynaMine, CABS-flex, and PROPHET-Ab ridge.",
+      "Grouped-repeated CV clusters on V-gene family + CDR-H3 length + 50% CDR-H3 identity.",
+      "Every metric is framed with bootstrap 95% confidence intervals.",
+      "The targeted PROPHET-Ab source is ~1000 antibodies across 13 biophysical assays.",
+      "The README target is n >= 400 harmonized records."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "struct-devpred",
+    "title": "struct-devpred",
+    "tagline": "On the harmonized Jain-2017 clinical-stage antibody panel, do structure-informed sequence descriptors (TAP, Developability Index, CamSol) \u2014 or PLM embeddings, or a hybrid \u2014 beat simple physicochemical/composition baselines for predicting biophysical endpoints under leakage-resistant cross-validation?",
+    "github_url": "https://github.com/susiefirst-maker/struct-devpred",
+    "status": "scaffold",
+    "tags": [
+      "antibody",
+      "descriptor ablation",
+      "ESM-2",
+      "GroupKFold",
+      "benchmark"
+    ],
+    "key_facts": [
+      "Computes 7 descriptor families on every antibody.",
+      "Trains 3 classical model families per endpoint: ridge, random forest, and gradient boosting.",
+      "The ablation table spans 6 Jain endpoints.",
+      "Cells report Spearman rho from out-of-fold predictions under 5-fold GroupKFold, with bootstrap 95% CI.",
+      "Inputs include 137 x 960 ESM-2 t12 embeddings from ProtePilot."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "bo-protein-dms",
+    "title": "bo-protein-dms",
+    "tagline": "On the GB1 4-position DMS landscape (Wu et al. 2016), do discrete, sequence-aware Bayesian-optimization strategies beat random search for a 96-query protein-engineering campaign \u2014 under >= 20 seeds with bootstrap 95 % confidence intervals?",
+    "github_url": "https://github.com/susiefirst-maker/bo-protein-dms",
+    "status": "scaffold",
+    "tags": [
+      "Bayesian optimization",
+      "DMS",
+      "GB1",
+      "discrete BO",
+      "retrospective"
+    ],
+    "key_facts": [
+      "The benchmark is framed as a 96-query protein-engineering campaign.",
+      "The README requires >= 20 seeds with bootstrap 95% confidence intervals.",
+      "Four strategies are listed: random, top_predicted_ridge, gp_hamming, and turbo_lite.",
+      "The first run downloads the GB1 Wu-2016 four-site DMS set (~5 MB)."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "constrained-cdr-gen",
+    "title": "constrained-cdr-gen",
+    "tagline": "Does property-guided Gibbs sampling over CDR positions produce more developable candidate antibodies than unguided masked-LM sampling or random AA substitution \u2014 under evaluation by an independent developability oracle that the sampler never saw?",
+    "github_url": "https://github.com/susiefirst-maker/constrained-cdr-gen",
+    "status": "scaffold",
+    "tags": [
+      "antibody",
+      "CDR-H3",
+      "ESM-2",
+      "guided generation",
+      "Metropolis-Hastings"
+    ],
+    "key_facts": [
+      "The independent oracle has 4 checks: TAP risk flags, Developability Index, CamSol-intrinsic, and a humanness proxy.",
+      "The reproduction command generates 200 candidate CDR-H3 variants on Trastuzumab.",
+      "The pass-rate target for guided vs unguided is >= 2x with non-overlapping 95% CIs.",
+      "The diversity target among passing designs is >= 0.8 x unguided.",
+      "The ESM-2 perplexity target for guided sequences is <= 1.2 x unguided."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "oglycan-optimizer",
+    "title": "oglycan-optimizer",
+    "tagline": "Given a glycoprotein's site catalog, it tunes 6 instrument and workflow parameters \u2014 ETD supplemental activation, MS2 resolution, HCD collision energy, enzyme prep, LC gradient, search tolerance \u2014 to maximize site-localized glycan identification confidence.",
+    "github_url": "https://github.com/susiefirst-maker/oglycan-optimizer",
+    "status": "shipped",
+    "tags": [
+      "mass spectrometry",
+      "O-glycan",
+      "EThcD",
+      "stdlib",
+      "Streamlit"
+    ],
+    "key_facts": [
+      "The optimizer tunes 6 instrument and workflow parameters.",
+      "ETD peaks at ~18% supplemental activation, while HCD peaks at ~35%.",
+      "Including SialEXO pretreatment is reported as +17% yield.",
+      "Gradient length is described as saturating above ~150 minutes.",
+      "v1.1 adds 5 reference catalogs."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "proteloop",
+    "title": "ProteLoop",
+    "tagline": "ProteLoop applies the autoresearch loop pattern to biopharma R&D -- automating the iterative optimization of analytical methods, purification conditions, formulation parameters, and regulatory intelligence for monoclonal antibodies, bispecifics, ADCs, and fusion proteins.",
+    "github_url": "https://github.com/susiefirst-maker/proteloop",
+    "status": "shipped",
+    "tags": [
+      "autonomous research",
+      "biopharma",
+      "formulation",
+      "regulatory",
+      "mass spectrometry"
+    ],
+    "key_facts": [
+      "The project tracks 13 loops across analytical, process, formulation, and regulatory domains.",
+      "4 loops are listed as having met or exceeded their optimization targets.",
+      "The built-in reference data includes 5,000 IEDB MHC-II epitopes.",
+      "The database registry includes 107,613 SAbDab structures.",
+      "Validation reports 96.1% alignment with published protocols."
+    ],
+    "frontend_url": null
+  },
+  {
+    "id": "biograph",
+    "title": "TODO: biograph README missing",
+    "tagline": "TODO: add README-backed copy once biograph/README.md exists.",
+    "github_url": "https://github.com/susiefirst-maker/biograph",
+    "status": "scaffold",
+    "tags": [
+      "TODO"
+    ],
+    "key_facts": [
+      "TODO: README.md not found in the repo, so title, tagline, tags, and quantitative facts could not be sourced."
+    ],
+    "frontend_url": null
+  }
+]
