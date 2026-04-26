@@ -1,5 +1,8 @@
 # bo-protein-dms
 
+**Screenshot**
+![Best-so-far fitness across BO strategies on the synthetic GB1-like benchmark](../screenshots/bo-protein-dms/synthetic_best_so_far.png)
+
 **Problem** Protein BO plans that operate on raw pooled PLM embeddings can fail silently and are hard to defend methodologically. The field needs a discrete, sequence-aware retrospective benchmark that shows whether structured BO strategies actually beat random search on a plate-sized campaign.
 
 **Approach**

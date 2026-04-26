@@ -67,6 +67,16 @@
         header.appendChild(badge);
         card.appendChild(header);
 
+        if (project.screenshot) {
+          const frame = createElement("div", "project-screenshot-frame");
+          const image = createElement("img", "project-screenshot");
+          image.src = project.screenshot;
+          image.alt = project.title + " screenshot";
+          image.loading = "lazy";
+          frame.appendChild(image);
+          card.appendChild(frame);
+        }
+
         const tags = createElement("ul", "tag-list");
         project.tags.forEach((tag) => {
           const item = createElement("li", "tag-chip", tag);

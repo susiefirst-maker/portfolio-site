@@ -19,7 +19,8 @@
       "PROPHET-Ab results report 8/13 significant correlations with 13/13 correct direction.",
       "IEDB validation reports ROC AUC = 0.699 on 5,000 human MHC-II T-cell epitopes."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   },
   {
     "id": "ab-benchmark",
@@ -41,7 +42,8 @@
       "The targeted PROPHET-Ab source is ~1000 antibodies across 13 biophysical assays.",
       "The README target is n >= 400 harmonized records."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   },
   {
     "id": "struct-devpred",
@@ -63,7 +65,8 @@
       "Cells report Spearman rho from out-of-fold predictions under 5-fold GroupKFold, with bootstrap 95% CI.",
       "Inputs include 137 x 960 ESM-2 t12 embeddings from ProtePilot."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   },
   {
     "id": "bo-protein-dms",
@@ -84,7 +87,8 @@
       "Four strategies are listed: random, top_predicted_ridge, gp_hamming, and turbo_lite.",
       "The first run downloads the GB1 Wu-2016 four-site DMS set (~5 MB)."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": "screenshots/bo-protein-dms/synthetic_best_so_far.png"
   },
   {
     "id": "constrained-cdr-gen",
@@ -106,7 +110,8 @@
       "The diversity target among passing designs is >= 0.8 x unguided.",
       "The ESM-2 perplexity target for guided sequences is <= 1.2 x unguided."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   },
   {
     "id": "oglycan-optimizer",
@@ -128,7 +133,8 @@
       "Gradient length is described as saturating above ~150 minutes.",
       "v1.1 adds 5 reference catalogs."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   },
   {
     "id": "proteloop",
@@ -150,7 +156,8 @@
       "The database registry includes 107,613 SAbDab structures.",
       "Validation reports 96.1% alignment with published protocols."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   },
   {
     "id": "biograph",
@@ -164,6 +171,7 @@
     "key_facts": [
       "TODO: README.md not found in the repo, so title, tagline, tags, and quantitative facts could not be sourced."
     ],
-    "frontend_url": null
+    "frontend_url": null,
+    "screenshot": null
   }
 ]
