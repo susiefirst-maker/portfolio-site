@@ -1,5 +1,8 @@
 # ab-benchmark
 
+**Screenshot**
+![Phase 0 preprint draft (page 1)](../screenshots/ab-benchmark/preprint_v1_p1.png)
+
 **Problem** Antibody developability baselines are hard to compare because they are usually reported on narrow datasets and inconsistent splits. The field needs a shared benchmark that harmonizes sources, preserves provenance, and evaluates common baselines under one leakage-resistant harness.
 
 **Approach**

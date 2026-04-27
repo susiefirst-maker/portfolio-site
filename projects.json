@@ -43,7 +43,7 @@
       "The README target is n >= 400 harmonized records."
     ],
     "frontend_url": null,
-    "screenshot": null
+    "screenshot": "screenshots/ab-benchmark/preprint_v1_p1.png"
   },
   {
     "id": "struct-devpred",
