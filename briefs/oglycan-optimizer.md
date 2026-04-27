@@ -1,5 +1,8 @@
 # oglycan-optimizer
 
+**Screenshot**
+![oglycan-optimizer Streamlit UI landing page](../screenshots/oglycan-optimizer/serve_landing.png)
+
 **Problem** Open glycoproteomics tools usually start after raw data already exists. What is missing is a practical way to choose O-glycopeptide acquisition settings before the run, instead of relying on trial-and-error or vendor defaults.
 
 **Approach**
