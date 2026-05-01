@@ -27,7 +27,7 @@
     "title": "ab-benchmark",
     "tagline": "This package treats TAP, DI, CamSol, and PROPHET-Ab as comparable baselines under a common evaluation harness \u2014 grouped-repeated CV clustered on V-gene family + CDR-H3 length + 50% CDR-H3 identity, with bootstrap 95% CIs on every metric.",
     "github_url": "https://github.com/susiefirst-maker/ab-benchmark",
-    "status": "in-progress",
+    "status": "shipped",
     "tags": [
       "antibody",
       "benchmark",
@@ -36,11 +36,11 @@
       "bootstrap CI"
     ],
     "key_facts": [
-      "The README scope names 7 baseline families: TAP, Developability Index, CamSol-intrinsic, BioPhi/OASis, DynaMine, CABS-flex, and PROPHET-Ab ridge.",
-      "Grouped-repeated CV clusters on V-gene family + CDR-H3 length + 50% CDR-H3 identity.",
-      "Every metric is framed with bootstrap 95% confidence intervals.",
-      "The targeted PROPHET-Ab source is ~1000 antibodies across 13 biophysical assays.",
-      "The README target is n >= 400 harmonized records."
+      "Phase 0 audit reports 1,243 harmonized records covering 1,106 unique antibodies.",
+      "7 baseline families: TAP, Developability Index, CamSol-intrinsic, BioPhi/OASis, DynaMine, CABS-flex, and PROPHET-Ab ridge.",
+      "Grouped-repeated CV clustered on V-gene family + CDR-H3 length + 50% CDR-H3 identity.",
+      "Every metric framed with bootstrap 95% confidence intervals.",
+      "Test suite reports 99/99 passing at 71% coverage. Released as v0.1.0."
     ],
     "frontend_url": null,
     "screenshot": "screenshots/ab-benchmark/preprint_v1_p1.png"
@@ -50,7 +50,7 @@
     "title": "struct-devpred",
     "tagline": "On the harmonized Jain-2017 clinical-stage antibody panel, do structure-informed sequence descriptors (TAP, Developability Index, CamSol) \u2014 or PLM embeddings, or a hybrid \u2014 beat simple physicochemical/composition baselines for predicting biophysical endpoints under leakage-resistant cross-validation?",
     "github_url": "https://github.com/susiefirst-maker/struct-devpred",
-    "status": "scaffold",
+    "status": "shipped",
     "tags": [
       "antibody",
       "descriptor ablation",
@@ -59,10 +59,10 @@
       "benchmark"
     ],
     "key_facts": [
-      "Computes 7 descriptor families on every antibody.",
-      "Trains 3 classical model families per endpoint: ridge, random forest, and gradient boosting.",
-      "The ablation table spans 6 Jain endpoints.",
-      "Cells report Spearman rho from out-of-fold predictions under 5-fold GroupKFold, with bootstrap 95% CI.",
+      "Best hic_rt model reaches Spearman rho +0.41 with 95% CI [+0.26, +0.54].",
+      "hybrid_seq_struct ranks first with mean rho +0.333 across six endpoints.",
+      "Computes 7 descriptor families; trains 3 model families per endpoint under 5-fold GroupKFold.",
+      "All cells report Spearman rho with bootstrap 95% CI.",
       "Inputs include 137 x 960 ESM-2 t12 embeddings from ProtePilot."
     ],
     "frontend_url": null,
@@ -73,7 +73,7 @@
     "title": "bo-protein-dms",
     "tagline": "On the GB1 4-position DMS landscape (Wu et al. 2016), do discrete, sequence-aware Bayesian-optimization strategies beat random search for a 96-query protein-engineering campaign \u2014 under >= 20 seeds with bootstrap 95 % confidence intervals?",
     "github_url": "https://github.com/susiefirst-maker/bo-protein-dms",
-    "status": "scaffold",
+    "status": "shipped",
     "tags": [
       "Bayesian optimization",
       "DMS",
@@ -82,10 +82,11 @@
       "retrospective"
     ],
     "key_facts": [
-      "The benchmark is framed as a 96-query protein-engineering campaign.",
-      "The README requires >= 20 seeds with bootstrap 95% confidence intervals.",
-      "Four strategies are listed: random, top_predicted_ridge, gp_hamming, and turbo_lite.",
-      "The first run downloads the GB1 Wu-2016 four-site DMS set (~5 MB)."
+      "On a 160,000-variant GB1 landscape, active BO reaches final best fitness 5.99 vs 2.57 for random at 96-query budget.",
+      "turbo_lite reaches 90% of maximum in 31 rounds.",
+      "Four strategies benchmarked: random, top_predicted_ridge, gp_hamming, and turbo_lite.",
+      "All results under >= 20 seeds with bootstrap 95% confidence intervals.",
+      "Released as v0.1.1 on GitHub."
     ],
     "frontend_url": null,
     "screenshot": "screenshots/bo-protein-dms/synthetic_best_so_far.png"
@@ -95,7 +96,7 @@
     "title": "constrained-cdr-gen",
     "tagline": "Does property-guided Gibbs sampling over CDR positions produce more developable candidate antibodies than unguided masked-LM sampling or random AA substitution \u2014 under evaluation by an independent developability oracle that the sampler never saw?",
     "github_url": "https://github.com/susiefirst-maker/constrained-cdr-gen",
-    "status": "scaffold",
+    "status": "shipped",
     "tags": [
       "antibody",
       "CDR-H3",
@@ -104,11 +105,11 @@
       "Metropolis-Hastings"
     ],
     "key_facts": [
-      "The independent oracle has 4 checks: TAP risk flags, Developability Index, CamSol-intrinsic, and a humanness proxy.",
-      "The reproduction command generates 200 candidate CDR-H3 variants on Trastuzumab.",
-      "The pass-rate target for guided vs unguided is >= 2x with non-overlapping 95% CIs.",
-      "The diversity target among passing designs is >= 0.8 x unguided.",
-      "The ESM-2 perplexity target for guided sequences is <= 1.2 x unguided."
+      "Guided sampling reaches pass rate 0.850 with 95% CI [0.76, 0.93] vs 0.650 unguided and 0.438 random.",
+      "Guided ESM perplexity is 9.12 vs 13.07 for unguided sampling.",
+      "Independent oracle uses 4 checks: TAP risk flags, Developability Index, CamSol-intrinsic, and humanness proxy.",
+      "Generates 200 candidate CDR-H3 variants on Trastuzumab.",
+      "Diversity among passing designs maintained at >= 0.8x unguided."
     ],
     "frontend_url": null,
     "screenshot": null
@@ -161,15 +162,22 @@
   },
   {
     "id": "biograph",
-    "title": "TODO: biograph README missing",
-    "tagline": "TODO: add README-backed copy once biograph/README.md exists.",
+    "title": "BioGraph — Biopharma Knowledge Platform",
+    "tagline": "Knowledge compilation platform for biopharma R&D that structures domain claims and lessons into queryable Claim/Lesson objects with bilingual CN/EN support.",
     "github_url": "https://github.com/susiefirst-maker/biograph",
-    "status": "scaffold",
+    "status": "in-progress",
     "tags": [
-      "TODO"
+      "knowledge graph",
+      "biopharma",
+      "bilingual",
+      "claims",
+      "schema"
     ],
     "key_facts": [
-      "TODO: README.md not found in the repo, so title, tagline, tags, and quantitative facts could not be sourced."
+      "Structures domain knowledge into Claim and Lesson objects with provenance tracking.",
+      "Bilingual CN/EN support for cross-language knowledge compilation.",
+      "Schema v1 completed April 2026.",
+      "Designed as an independent product for biopharma intelligence."
     ],
     "frontend_url": null,
     "screenshot": null

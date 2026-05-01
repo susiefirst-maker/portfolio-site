@@ -6,23 +6,110 @@
     <title>Di Wu &mdash; ML for Biologics Portfolio</title>
     <meta
       name="description"
-      content="Static portfolio skeleton for Di Wu's ML for biologics projects."
+      content="Di Wu — scientist building AI decision systems for biologics development. ML portfolio spanning protein language models, Bayesian optimization, antibody developability benchmarking, and mass spectrometry method optimization."
     >
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <main class="page-shell">
-      <header class="page-header">
-        <p class="eyebrow">Static Portfolio Skeleton</p>
+
+      <!-- Navigation -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects-heading">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Header -->
+      <header class="page-header" id="about">
+        <p class="eyebrow">ML for Biologics</p>
         <h1>Di Wu</h1>
         <p class="lede">
-          I run statistically rigorous benchmarks across the antibody
-          developability stack &mdash; descriptor ablations, discrete BO, guided
-          generation with independent oracles &mdash; and ship clickable
-          artifacts grounded in published methods.
+          Scientist building AI decision systems for biologics development.
+          I combine deep protein science&mdash;mass spectrometry, CMC,
+          formulation&mdash;with ML engineering: protein language models,
+          discrete Bayesian optimization, and decision orchestration to solve
+          real drug-development problems with statistically rigorous benchmarks.
         </p>
+        <div class="header-links">
+          <a href="https://github.com/susiefirst-maker" class="header-link" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/di-wu-phd/" class="header-link" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:wudi.cindy@gmail.com" class="header-link">Email</a>
+        </div>
       </header>
 
+      <!-- Skills / Tech Stack -->
+      <section class="info-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills &amp; Methods</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">ML Methods</h3>
+            <ul class="tag-list">
+              <li class="tag-chip">ESM-2 / ProtT5 embeddings</li>
+              <li class="tag-chip">XGBoost</li>
+              <li class="tag-chip">Random Forest</li>
+              <li class="tag-chip">Ridge Regression</li>
+              <li class="tag-chip">Discrete Bayesian Optimization</li>
+              <li class="tag-chip">Gaussian Processes</li>
+              <li class="tag-chip">SHAP</li>
+              <li class="tag-chip">Grouped CV</li>
+              <li class="tag-chip">Bootstrap CI</li>
+              <li class="tag-chip">Gibbs Sampling</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Languages &amp; Tools</h3>
+            <ul class="tag-list">
+              <li class="tag-chip">Python</li>
+              <li class="tag-chip">PyTorch</li>
+              <li class="tag-chip">scikit-learn</li>
+              <li class="tag-chip">Streamlit</li>
+              <li class="tag-chip">Transformers / ESM-2</li>
+              <li class="tag-chip">pytest</li>
+              <li class="tag-chip">Docker</li>
+              <li class="tag-chip">Git</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Domain Expertise</h3>
+            <ul class="tag-list">
+              <li class="tag-chip">Antibody Developability</li>
+              <li class="tag-chip">DSF / Tm Prediction</li>
+              <li class="tag-chip">SEC Aggregation</li>
+              <li class="tag-chip">CDR-H3 Generation</li>
+              <li class="tag-chip">Deep Mutational Scanning</li>
+              <li class="tag-chip">O-Glycopeptide MS</li>
+              <li class="tag-chip">EThcD Optimization</li>
+              <li class="tag-chip">Biosimilar CMC</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Proficiency bars -->
+        <div class="proficiency-bars">
+          <div class="bar-row">
+            <span class="bar-label">Mass Spectrometry / Analytical Science</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 95%"></div></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Protein Engineering / CMC</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">ML / Computational Biology</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Software Engineering</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 70%"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
       <section class="projects-block" aria-labelledby="projects-heading">
         <div class="section-heading">
           <h2 id="projects-heading">Projects</h2>
@@ -36,7 +123,176 @@
           </p>
         </noscript>
       </section>
+
+      <!-- Work Experience -->
+      <section class="info-section" aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Senior Scientist</h3>
+                <p class="timeline-org">Gilead Sciences</p>
+              </div>
+              <span class="timeline-date">2023 &ndash; Present</span>
+            </div>
+            <p class="timeline-desc">
+              Lead analytical characterization and method development for biologics programs.
+              Protein higher-order structure analysis, comparability assessment, and
+              ML-augmented analytical decision workflows.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Senior Scientist II</h3>
+                <p class="timeline-org">AbbVie</p>
+              </div>
+              <span class="timeline-date">2021 &ndash; 2023</span>
+            </div>
+            <p class="timeline-desc">
+              Analytical development for therapeutic antibodies and bispecifics.
+              Mass spectrometry-based characterization of complex biologics;
+              method transfer and validation across global sites.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Scientist II</h3>
+                <p class="timeline-org">NGM Biopharmaceuticals</p>
+              </div>
+              <span class="timeline-date">2020 &ndash; 2021</span>
+            </div>
+            <p class="timeline-desc">
+              Protein characterization and analytical method development for
+              clinical-stage biologics pipeline.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Postdoctoral Fellow &mdash; Emerging Technology Team</h3>
+                <p class="timeline-org">U.S. FDA / CDER</p>
+              </div>
+              <span class="timeline-date">2018 &ndash; 2020</span>
+            </div>
+            <p class="timeline-desc">
+              Developed analytical methods for biosimilar characterization and
+              regulatory science. Glycoproteomics method development for biosimilar
+              comparability; contributed to FDA guidance on analytical similarity assessment.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="info-section" aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Ph.D. in Chemistry</h3>
+                <p class="timeline-org">Northeastern University</p>
+              </div>
+              <span class="timeline-date">2013 &ndash; 2018</span>
+            </div>
+            <p class="timeline-desc">
+              Co-first author on Nature Biotechnology 2018. Research in mass spectrometry-based
+              glycoproteomics and protein characterization. Novel O-glycopeptide characterization
+              methods using EThcD fragmentation. Collaborative research with MIT, Tufts, and Barnett Institute.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">M.S. in Chemistry</h3>
+                <p class="timeline-org">University of Massachusetts Dartmouth</p>
+              </div>
+              <span class="timeline-date">2011 &ndash; 2013</span>
+            </div>
+            <p class="timeline-desc">
+              Advanced analytical chemistry and mass spectrometry training.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">B.S. in Applied Chemistry</h3>
+                <p class="timeline-org">Beijing Technology and Business University</p>
+              </div>
+              <span class="timeline-date">2007 &ndash; 2011</span>
+            </div>
+            <p class="timeline-desc">
+              Foundation in chemistry and analytical methods.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Publications & Achievements -->
+      <section class="info-section" aria-labelledby="publications">
+        <h2 id="publications">Publications &amp; Achievements</h2>
+        <div class="publications-list">
+          <article class="pub-card pub-highlight">
+            <span class="pub-badge">Nature Biotechnology 2018</span>
+            <p class="pub-desc">
+              Co-first author &mdash; large-scale glycoproteomics study advancing
+              O-glycopeptide characterization methodology. 8 publications total including
+              Nature Biotechnology, Analytical Chemistry (2x), and others.
+            </p>
+          </article>
+
+          <article class="pub-card">
+            <span class="pub-badge">Analytical Chemistry (2x)</span>
+            <p class="pub-desc">
+              Two publications on mass spectrometry method development for
+              glycoprotein characterization.
+            </p>
+          </article>
+
+          <article class="pub-card">
+            <span class="pub-badge">FDA ETT Postdoc</span>
+            <p class="pub-desc">
+              Emerging Technology Team fellowship in CDER &mdash; contributed to
+              biosimilar analytical assessment methods and regulatory science.
+            </p>
+          </article>
+
+          <article class="pub-card">
+            <span class="pub-badge">ABC Young Scientist Award 2024</span>
+            <p class="pub-desc">
+              Recognition for contributions to analytical and bioanalytical chemistry.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="info-section contact-section" aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p class="contact-text">
+          Open to ML Scientist and AI for Drug Discovery roles. I&rsquo;m interested in
+          positions where rigorous protein science meets modern ML.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:wudi.cindy@gmail.com" class="contact-link">wudi.cindy@gmail.com</a>
+          <a href="https://github.com/susiefirst-maker" class="contact-link" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/di-wu-phd/" class="contact-link" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </section>
+
     </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Di Wu. Built with vanilla HTML &amp; CSS.</p>
+    </footer>
 
     <script>
       const projectsRoot = document.getElementById("projects");

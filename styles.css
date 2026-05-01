@@ -274,6 +274,255 @@ h1 {
   background: var(--notice-bg);
 }
 
+/* ── Navigation ── */
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.site-nav a:hover {
+  color: var(--link);
+}
+
+/* ── Header links ── */
+
+.header-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.header-link {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--link);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--link);
+  transition: background 0.15s, color 0.15s;
+}
+
+.header-link:hover {
+  background: var(--link);
+  color: var(--panel-strong);
+}
+
+/* ── Info sections (skills, experience, education, publications, contact) ── */
+
+.info-section {
+  margin-top: 3rem;
+}
+
+.info-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Skills grid ── */
+
+.skills-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.skill-group-title {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
+
+.skill-group .tag-list {
+  margin: 0;
+}
+
+/* ── Proficiency bars ── */
+
+.proficiency-bars {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bar-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.bar-track {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--link);
+  transition: width 0.6s ease;
+}
+
+/* ── Timeline (experience + education) ── */
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-card {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  box-shadow: var(--shadow);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  margin-bottom: 0.15rem;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.timeline-org {
+  margin-bottom: 0;
+  color: var(--link);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.timeline-date {
+  flex: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timeline-desc {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ── Publications ── */
+
+.publications-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.pub-card {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  box-shadow: var(--shadow);
+}
+
+.pub-highlight {
+  border-color: var(--link);
+  border-width: 2px;
+}
+
+.pub-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--shipped-bg);
+  color: var(--shipped-text);
+  font-size: 0.83rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pub-highlight .pub-badge {
+  background: var(--tag-bg);
+  color: var(--link);
+}
+
+.pub-desc {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ── Contact ── */
+
+.contact-text {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 38rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--link);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--link);
+  transition: background 0.15s, color 0.15s;
+}
+
+.contact-link:hover {
+  background: var(--link);
+  color: var(--panel-strong);
+}
+
+/* ── Footer ── */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+
 @media (max-width: 640px) {
   .page-shell {
     width: min(100% - 1.25rem, 45rem);
@@ -281,12 +530,22 @@ h1 {
   }
 
   .section-heading,
-  .project-header {
+  .project-header,
+  .timeline-header {
     flex-direction: column;
     align-items: start;
   }
 
   .section-meta {
     text-align: left;
+  }
+
+  .bar-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .header-links {
+    flex-wrap: wrap;
   }
 }
