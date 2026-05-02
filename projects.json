@@ -136,50 +136,5 @@
     ],
     "frontend_url": null,
     "screenshot": "screenshots/oglycan-optimizer/serve_landing.png"
-  },
-  {
-    "id": "proteloop",
-    "title": "ProteLoop",
-    "tagline": "ProteLoop applies the autoresearch loop pattern to biopharma R&D -- automating the iterative optimization of analytical methods, purification conditions, formulation parameters, and regulatory intelligence for monoclonal antibodies, bispecifics, ADCs, and fusion proteins.",
-    "github_url": "https://github.com/susiefirst-maker/proteloop",
-    "status": "shipped",
-    "tags": [
-      "autonomous research",
-      "biopharma",
-      "formulation",
-      "regulatory",
-      "mass spectrometry"
-    ],
-    "key_facts": [
-      "The project tracks 13 loops across analytical, process, formulation, and regulatory domains.",
-      "4 loops are listed as having met or exceeded their optimization targets.",
-      "The built-in reference data includes 5,000 IEDB MHC-II epitopes.",
-      "The database registry includes 107,613 SAbDab structures.",
-      "Validation reports 96.1% alignment with published protocols."
-    ],
-    "frontend_url": null,
-    "screenshot": null
-  },
-  {
-    "id": "biograph",
-    "title": "BioGraph — Biopharma Knowledge Platform",
-    "tagline": "Knowledge compilation platform for biopharma R&D that structures domain claims and lessons into queryable Claim/Lesson objects with bilingual CN/EN support.",
-    "github_url": "https://github.com/susiefirst-maker/biograph",
-    "status": "in-progress",
-    "tags": [
-      "knowledge graph",
-      "biopharma",
-      "bilingual",
-      "claims",
-      "schema"
-    ],
-    "key_facts": [
-      "Structures domain knowledge into Claim and Lesson objects with provenance tracking.",
-      "Bilingual CN/EN support for cross-language knowledge compilation.",
-      "Schema v1 completed April 2026.",
-      "Designed as an independent product for biopharma intelligence."
-    ],
-    "frontend_url": null,
-    "screenshot": null
   }
 ]
