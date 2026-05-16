@@ -1,0 +1,155 @@
+[
+  {
+    "id": "protepilot",
+    "title": "ProtePilot",
+    "tagline": "Therapeutic-protein developability decision support with command-line checks and an optional Streamlit interface.",
+    "github_url": "https://github.com/diwuhub/protepilot",
+    "status": "shipped",
+    "tags": [
+      "developability",
+      "therapeutic protein",
+      "decision support",
+      "Streamlit"
+    ],
+    "key_facts": [
+      "Runs from a clean clone with layered dependency files for core, UI, and training modes.",
+      "Includes deterministic local checks and optional LLM-assisted demo paths that run without keys by default.",
+      "Use `python run_all_checks.py --fast` or `streamlit run app.py` after installing dependencies."
+    ],
+    "frontend_url": null,
+    "screenshots": [
+      {
+        "src": "screenshots/protepilot/design_space_heatmap.png",
+        "caption": "Developability design-space view."
+      },
+      {
+        "src": "screenshots/protepilot/iex_sma_demo_plot.png",
+        "caption": "Chromatography simulation output."
+      },
+      {
+        "src": "screenshots/protepilot/multicomp_chromatogram.png",
+        "caption": "Multi-component chromatogram example."
+      }
+    ]
+  },
+  {
+    "id": "biologics-decision-engine",
+    "title": "biologics-decision-engine",
+    "tagline": "Rule-based CMC document triage, CQA extraction, evidence-gap analysis, and reviewer-question prediction.",
+    "github_url": "https://github.com/diwuhub/biologics-decision-engine",
+    "status": "shipped",
+    "tags": [
+      "CMC",
+      "document analysis",
+      "decision support",
+      "Streamlit"
+    ],
+    "key_facts": [
+      "Runs locally without cloud services for default rule-based extraction.",
+      "Supports characterization, stability, analytical-method, and comparability document workflows.",
+      "Use `python -m pytest tests/ -q` or `streamlit run ui/app.py` after installing dependencies."
+    ],
+    "frontend_url": null,
+    "screenshot": null
+  },
+  {
+    "id": "ab-benchmark",
+    "title": "ab-benchmark",
+    "tagline": "Shared antibody developability benchmark utilities with harmonized data loaders, baseline scoring, and grouped validation helpers.",
+    "github_url": "https://github.com/diwuhub/ab-benchmark",
+    "status": "shipped",
+    "tags": [
+      "antibody",
+      "benchmark",
+      "validation",
+      "bootstrap CI"
+    ],
+    "key_facts": [
+      "Provides CLI workflows for building harmonized datasets and running baseline metrics.",
+      "Uses grouped evaluation utilities to reduce leakage from related antibody sequences.",
+      "Use `pip install -e \".[dev]\"` and run the commands in the repository README."
+    ],
+    "frontend_url": null,
+    "screenshot": "screenshots/ab-benchmark/dashboard.png"
+  },
+  {
+    "id": "struct-devpred",
+    "title": "struct-devpred",
+    "tagline": "Descriptor-ablation framework for antibody developability prediction under grouped cross-validation.",
+    "github_url": "https://github.com/diwuhub/struct-devpred",
+    "status": "shipped",
+    "tags": [
+      "antibody",
+      "descriptor ablation",
+      "cross-validation",
+      "benchmark"
+    ],
+    "key_facts": [
+      "Compares sequence, physicochemical, structure-informed, and embedding-derived descriptors.",
+      "Designed to work with sibling `ab-benchmark` and optional `ProtePilot` artifacts.",
+      "Use `pip install -e \".[dev]\"` and run `python -m struct_devpred.cli`."
+    ],
+    "frontend_url": null,
+    "screenshot": "screenshots/struct-devpred/benchmark_overview.png"
+  },
+  {
+    "id": "bo-protein-dms",
+    "title": "bo-protein-dms",
+    "tagline": "Discrete Bayesian-optimization benchmark for protein-engineering campaigns on synthetic or user-supplied DMS landscapes.",
+    "github_url": "https://github.com/diwuhub/bo-protein-dms",
+    "status": "shipped",
+    "tags": [
+      "Bayesian optimization",
+      "DMS",
+      "protein engineering",
+      "Streamlit"
+    ],
+    "key_facts": [
+      "Includes random search, ridge, Hamming-kernel GP, and TuRBO-style strategy examples.",
+      "Default synthetic data path runs from a clean clone; real GB1 data can be supplied separately.",
+      "Use `python -m bo_dms.cli --dataset synthetic` or `streamlit run app.py`."
+    ],
+    "frontend_url": null,
+    "screenshot": "screenshots/bo-protein-dms/benchmark_overview.png"
+  },
+  {
+    "id": "constrained-cdr-gen",
+    "title": "constrained-cdr-gen",
+    "tagline": "Property-guided CDR-H3 sampling benchmark with separate generation and developability-evaluation components.",
+    "github_url": "https://github.com/diwuhub/constrained-cdr-gen",
+    "status": "shipped",
+    "tags": [
+      "antibody",
+      "CDR-H3",
+      "guided generation",
+      "benchmark"
+    ],
+    "key_facts": [
+      "Demonstrates a reproducible computational design loop for fixed-length CDR-H3 candidates.",
+      "Separates sampler guidance from independent developability checks to avoid circular scoring.",
+      "Use `python -m cdr_gen.cli --parent trastuzumab` or `streamlit run app.py`."
+    ],
+    "frontend_url": null,
+    "screenshot": "screenshots/constrained-cdr-gen/trastuzumab_browser.png"
+  },
+  {
+    "id": "oglycan-optimizer",
+    "title": "oglycan-optimizer",
+    "tagline": "Physics-informed command-line optimizer for O-glycopeptide EThcD acquisition parameters.",
+    "github_url": "https://github.com/diwuhub/oglycan-optimizer",
+    "status": "shipped",
+    "tags": [
+      "mass spectrometry",
+      "O-glycan",
+      "EThcD",
+      "stdlib"
+    ],
+    "key_facts": [
+      "Pure-Python package for evaluating site catalogs and recommending acquisition settings.",
+      "Includes CLI subcommands for tuning, uncertainty, sensitivity, pilot ingestion, and method cards.",
+      "Use `python -m oglycan tune sites/etanercept.json`; optional UI is available with `pip install .[web]`."
+    ],
+    "frontend_url": null,
+    "screenshot": "screenshots/oglycan-optimizer/serve_landing.png"
+  }
+]

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biopharma ML Project Portfolio</title>
+    <meta
+      name="description"
+      content="A compact portfolio of runnable biopharma ML and scientific software projects with screenshots, summaries, and GitHub links."
+    >
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">Overview</a>
+        <a href="#projects-heading">Projects</a>
+        <a href="#methods-heading">Methods</a>
+      </nav>
+
+      <header class="page-header" id="about">
+        <p class="eyebrow">Biopharma ML Projects</p>
+        <h1>Runnable Scientific Software Portfolio</h1>
+        <p class="lede">
+          A focused set of computational biology, biologics developability, protein
+          engineering, and CMC decision-support projects. Each repository is intended
+          to be cloneable, testable, and usable from a clean local environment.
+        </p>
+        <div class="header-links">
+          <a href="https://github.com/diwuhub" class="header-link" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </header>
+
+      <section class="info-section" aria-labelledby="methods-heading">
+        <h2 id="methods-heading">Methods &amp; Tools</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">ML Methods</h3>
+            <ul class="tag-list">
+              <li class="tag-chip">Protein language models</li>
+              <li class="tag-chip">Bayesian optimization</li>
+              <li class="tag-chip">Grouped cross-validation</li>
+              <li class="tag-chip">Bootstrap intervals</li>
+              <li class="tag-chip">Descriptor ablation</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Engineering</h3>
+            <ul class="tag-list">
+              <li class="tag-chip">Python</li>
+              <li class="tag-chip">Streamlit</li>
+              <li class="tag-chip">pytest</li>
+              <li class="tag-chip">Static HTML</li>
+              <li class="tag-chip">Reproducible CLIs</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Domains</h3>
+            <ul class="tag-list">
+              <li class="tag-chip">Antibody developability</li>
+              <li class="tag-chip">Protein engineering</li>
+              <li class="tag-chip">Glycoproteomics</li>
+              <li class="tag-chip">CMC analytics</li>
+              <li class="tag-chip">Decision support</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-block" aria-labelledby="projects-heading">
+        <div class="section-heading">
+          <h2 id="projects-heading">Projects</h2>
+          <p id="load-status" class="section-meta">Loading project metadata...</p>
+        </div>
+        <div id="projects" class="projects-list" aria-live="polite"></div>
+        <noscript>
+          <p class="notice">
+            This page reads <code>projects.json</code> in the browser, so JavaScript must
+            be enabled.
+          </p>
+        </noscript>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Biopharma ML project portfolio. Built as a static site.</p>
+    </footer>
+
+    <script>
+      const projectsRoot = document.getElementById("projects");
+      const loadStatus = document.getElementById("load-status");
+
+      function createElement(tagName, className, text) {
+        const node = document.createElement(tagName);
+        if (className) {
+          node.className = className;
+        }
+        if (text !== undefined) {
+          node.textContent = text;
+        }
+        return node;
+      }
+
+      function renderProject(project) {
+        const card = createElement("article", "project-card");
+
+        const header = createElement("div", "project-header");
+        const titleBlock = createElement("div", "project-title-block");
+        titleBlock.appendChild(createElement("h3", "project-title", project.title));
+        titleBlock.appendChild(createElement("p", "project-tagline", project.tagline));
+        header.appendChild(titleBlock);
+
+        const badge = createElement("span", "status-badge status-" + project.status, project.status);
+        badge.setAttribute("aria-label", "Status: " + project.status);
+        header.appendChild(badge);
+        card.appendChild(header);
+
+        const gallery = Array.isArray(project.screenshots) && project.screenshots.length
+          ? project.screenshots
+          : project.screenshot
+          ? [{ src: project.screenshot, caption: null }]
+          : [];
+
+        if (gallery.length === 1) {
+          const item = gallery[0];
+          const frame = createElement("div", "project-screenshot-frame");
+          const image = createElement("img", "project-screenshot");
+          image.src = item.src;
+          image.alt = project.title + " screenshot";
+          image.loading = "lazy";
+          frame.appendChild(image);
+          if (item.caption) {
+            frame.appendChild(createElement("p", "project-screenshot-caption", item.caption));
+          }
+          card.appendChild(frame);
+        } else if (gallery.length > 1) {
+          const grid = createElement("div", "project-screenshot-grid");
+          gallery.forEach((item) => {
+            const frame = createElement("figure", "project-screenshot-frame");
+            const image = createElement("img", "project-screenshot");
+            image.src = item.src;
+            image.alt = (item.caption || project.title) + " screenshot";
+            image.loading = "lazy";
+            frame.appendChild(image);
+            if (item.caption) {
+              frame.appendChild(createElement("figcaption", "project-screenshot-caption", item.caption));
+            }
+            grid.appendChild(frame);
+          });
+          card.appendChild(grid);
+        }
+
+        const tags = createElement("ul", "tag-list");
+        project.tags.forEach((tag) => {
+          const item = createElement("li", "tag-chip", tag);
+          tags.appendChild(item);
+        });
+        card.appendChild(tags);
+
+        const links = createElement("div", "project-links");
+        const githubLink = createElement("a", "project-link", "GitHub");
+        githubLink.href = project.github_url;
+        githubLink.target = "_blank";
+        githubLink.rel = "noreferrer";
+        links.appendChild(githubLink);
+
+        if (project.frontend_url) {
+          const frontendLink = createElement("a", "project-link", "Frontend");
+          frontendLink.href = project.frontend_url;
+          frontendLink.target = "_blank";
+          frontendLink.rel = "noreferrer";
+          links.appendChild(frontendLink);
+        }
+        card.appendChild(links);
+
+        const factsHeading = createElement("p", "facts-heading", "Basic run context");
+        card.appendChild(factsHeading);
+
+        const facts = createElement("ul", "facts-list");
+        project.key_facts.forEach((fact) => {
+          const item = createElement("li", "", fact);
+          facts.appendChild(item);
+        });
+        card.appendChild(facts);
+
+        return card;
+      }
+
+      async function loadProjects() {
+        try {
+          const response = await fetch("./projects.json", { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+
+          const projects = await response.json();
+          const fragment = document.createDocumentFragment();
+
+          projects.forEach((project) => {
+            fragment.appendChild(renderProject(project));
+          });
+
+          projectsRoot.replaceChildren(fragment);
+          loadStatus.textContent = projects.length + " public project summaries.";
+        } catch (error) {
+          const notice = createElement(
+            "p",
+            "notice",
+            "Could not load projects.json. Serve this directory with python3 -m http.server 8000 and open http://127.0.0.1:8000/."
+          );
+          projectsRoot.replaceChildren(notice);
+          loadStatus.textContent = "Load failed.";
+          console.error(error);
+        }
+      }
+
+      loadProjects();
+    </script>
+  </body>
+</html>
